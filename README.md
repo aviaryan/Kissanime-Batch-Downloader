@@ -1,7 +1,13 @@
 Kissanime-LinkDownload
 ======================
 
-Generates direct batch links for Kissanime episodes 
+If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
+
+This app avoids that by basically allowing you to simply copy the links from the main anime page, feeding all of them into the application and getting a text file of direct download links for all the episodes entered
+
+You also have the option of specifying the video quality. The app will then generate the download links for the specified quality (e.g 1080p MP4, 480p FLV etc) 
+
+Once you have all the links you can copy all of them and use something like Internet Download Manager to queue them all up at once and start batch downloading 
 
 The application has two modes - one takes a text file of individual episode page links from Kissanime and generates direct download links for each episode, probably useful if you want to batch download a series using a download manager or something since it's tedious to visit each page one by one and grab the download link again and again
 
