@@ -19,8 +19,11 @@ The application has two modes - one takes a text file of individual episode page
 
 The second mode adds the option of getting all the individual page links automatically from one particular series if you provide the link to the main page
 
-Usage instructions - Simply go to kissanime/Executable Version and download the two files present there. Put them in the same directory and 
-click on the KissanimeLinks.exe 
+Usage instructions 
+======================
+
+Simply go to kissanime/Executable Version and download the two files present there. Put them in the same directory and 
+click on the KissanimeLinks.exe - https://github.com/Vergo777/Kissanime-LinkDownload/tree/master/Executable%20version%20(DOWNLOAD%20THIS)
 
 Alternatively you can just download the zip file from here - http://a.pomf.se/ybrwee.zip
 
