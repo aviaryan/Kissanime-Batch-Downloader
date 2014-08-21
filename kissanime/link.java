@@ -25,57 +25,16 @@ class link {
 			batchDownload(); 
 		}
 		
-
+		System.out.println("Remember to put the episode page links in a file called 'links.txt' where each link is on a separate line, and keep it in the same directory as the exe file"); 
+		System.out.println("The direct links will be available in a file called 'download.txt'"); 
+		System.out.println("NOTE- Please make sure that your links.txt file does not contain any empty lines"); 
 		
 		int count = countLines();
 		String[] names = null; 
 		names = getChar(count);
 		Provider bitly = as("vergo777", "R_6a13f014b38f4f80a31cf7d80a7c18c7");
 		String[] shortLinks = new String[count]; 
-		String videoQuality = ""; 
-		
-		System.out.println("Remember to put the episode page links in a file called 'links.txt' where each link is on a separate line, and keep it in the same directory as the exe file"); 
-		System.out.println("The direct links will be available in a file called 'download.txt'"); 
-		System.out.println("NOTE- Please make sure that your links.txt file does not contain any empty lines"); 
-		System.out.println("Choose what quality you want by entering the corresponding number and pressing enter"); 
-		
-		System.out.println("For 1080p MP4 enter 1");
-		System.out.println("For 720p MP4 enter 2");
-		System.out.println("For 480p FLV enter 3");
-		System.out.println("For 360p FLV enter 4");
-		System.out.println("For 360p MP4 enter 5");
-		System.out.println("For 3gp enter 6");
-		
-		Scanner in = new Scanner(System.in);
-		int videoID = 0; 
-		videoID = in.nextInt(); 
-		
-		do {
-			switch(videoID) {
-			case 1 : videoQuality = "1920x1080.mp4";
-					 System.out.println("1080p MP4 selected"); 
-			break; 
-			case 2 : videoQuality = "1280x720.mp4";
-					 System.out.println("720p MP4 selected"); 
-			break; 
-			case 3 : videoQuality = "854x480.flv";
-					 System.out.println("480p FLV selected"); 
-			break; 
-			case 4 : videoQuality = "640x360.flv";
-					 System.out.println("360p FLV selected"); 
-			break; 
-			case 5 : videoQuality = "640x360.mp4";
-					 System.out.println("360p MP4 selected"); 
-			break; 
-			case 6 : videoQuality = "320x180.3gp";
-					 System.out.println("3gp selected"); 
-			break; 
-			default : System.out.println("Enter a number from 1-6 you imbecile");
-					  videoID = in.nextInt(); 
-			}
-		} while((videoID > 6 || videoID < 1));
-
-		in.close(); 
+		String videoQuality = getVideoQuality(); 
 
 		System.out.println("Getting download links, please be patient"); 
 		
@@ -104,6 +63,70 @@ class link {
 		writer.close();
 		
 		System.out.println("Your download links are now available in download.txt in the same directory"); 
+	}
+	
+	public static void batchDownload() throws IOException {
+		System.out.println("Enter the URL of the main page of the anime you'd like to download"); 
+		System.out.println("Example, for Wake up Girls it would be 'http://kissanime.com/Anime/Wake-Up-Girls'"); 
+		Scanner in = new Scanner(System.in);
+		String animePage = in.next(); 
+
+		Document doc = Jsoup.connect(animePage).get();
+		
+		Elements isAnimePage = doc.select("table.listing > tbody > tr > th"); 
+		
+		for (Element link : isAnimePage) {
+			if(link.html().equals("Episode name") || link.html().equals("Day Added")) {
+				System.out.println("Page is valid");
+				break; 
+			} else {
+				System.out.println("Incorrect page entered, please try again"); 
+				System.exit(0); 
+			}
+		}
+		
+		Elements animeLinks = doc.select("table.listing > tbody > tr > td > a"); 
+		String[] episodeLinks = new String[animeLinks.size()]; 
+		int arrayIndex = 0; 
+		for (Element link : animeLinks) {
+			episodeLinks[arrayIndex] = link.attr("abs:href"); 
+			arrayIndex++; 
+		}
+		
+		String videoQuality = getVideoQuality();  
+
+		System.out.println("Getting download links, please be patient"); 
+		
+		Provider bitly = as("vergo777", "R_6a13f014b38f4f80a31cf7d80a7c18c7");
+		String[] shortLinks = new String[episodeLinks.length];
+		
+		for(int i=0;i<episodeLinks.length;i++) {
+			doc = Jsoup.connect(episodeLinks[i]).get();
+			Element content = doc.getElementById("divDownload");
+			Elements links = content.getElementsByTag("a");
+			
+			for (Element link : links) {
+				String linkHref = link.attr("href");
+				String linkText = link.text();
+				if(linkText.equals(videoQuality)) {
+					Url url = bitly.call(shorten(linkHref));
+					shortLinks[i] = url.getShortUrl(); 
+				}
+			}
+		}
+		
+		System.out.println("Outputting download links to txt file"); 
+		
+		PrintWriter writer = new PrintWriter("download.txt", "UTF-8");
+		
+		for(int i=0;i<episodeLinks.length;i++) {
+			writer.println(shortLinks[i]);
+		}
+		writer.close();
+		
+		System.out.println("Your download links are now available in download.txt in the same directory");
+		
+		System.exit(0);
 	}
 	
 	public static int countLines() throws IOException {
@@ -138,34 +161,13 @@ class link {
 		}
 	}
 	
-	public static void batchDownload() throws IOException {
-		System.out.println("Enter the URL of the main page of the anime you'd like to download"); 
-		System.out.println("Example, for Wake up Girls it would be 'http://kissanime.com/Anime/Wake-Up-Girls'"); 
-		Scanner in = new Scanner(System.in);
-		String animePage = in.next(); 
-
-		Document doc = Jsoup.connect(animePage).get();
+	public static String getVideoQuality() {
 		
-		Elements isAnimePage = doc.select("table.listing > tbody > tr > th"); 
+		Scanner input = new Scanner(System.in); 
 		
-		for (Element link : isAnimePage) {
-			if(link.html().equals("Episode name") || link.html().equals("Day Added")) {
-				System.out.println("Page is valid");
-				break; 
-			} else {
-				System.out.println("Incorrect page entered, please try again"); 
-				System.exit(0); 
-			}
-		}
-		
-		Elements animeLinks = doc.select("table.listing > tbody > tr > td > a"); 
-		String[] episodeLinks = new String[animeLinks.size()]; 
-		int arrayIndex = 0; 
-		for (Element link : animeLinks) {
-			episodeLinks[arrayIndex] = link.attr("abs:href"); 
-			arrayIndex++; 
-		}
-		
+		int videoID = 0; 
+		String videoQuality = ""; 
+	 
 		System.out.println("Choose what quality you want by entering the corresponding number and pressing enter"); 
 		
 		System.out.println("For 1080p MP4 enter 1");
@@ -174,11 +176,10 @@ class link {
 		System.out.println("For 360p FLV enter 4");
 		System.out.println("For 360p MP4 enter 5");
 		System.out.println("For 3gp enter 6");
+		System.out.println("To enter custom video quality press 7");
+		System.out.println("Custom option is useful if file formats for a series are not standard (example Cromartie High School)"); 
 		
-		Scanner IDinput = new Scanner(System.in);
-		int videoID = 0; 
-		videoID = IDinput.nextInt(); 
-		String videoQuality = ""; 
+		videoID = input.nextInt();
 		
 		do {
 			switch(videoID) {
@@ -200,44 +201,16 @@ class link {
 			case 6 : videoQuality = "320x180.3gp";
 					 System.out.println("3gp selected"); 
 			break; 
-			default : System.out.println("Enter a number from 1-6 you imbecile");
-					  videoID = in.nextInt(); 
+			case 7 : System.out.println("Enter the video quality you want as it is present on the episode page"); 
+					 System.out.println("Example - For 360p MP4 Cromartie enter '480x360.mp4'"); 
+					 videoQuality = input.next(); 
+					 System.out.println(videoQuality + " " + "selected"); 
+			break; 
+			default : System.out.println("Enter a number from 1-7 you imbecile");
+					  videoID = input.nextInt(); 
 			}
-		} while((videoID > 6 || videoID < 1));
-
-		in.close(); 
-
-		System.out.println("Getting download links, please be patient"); 
+		} while((videoID > 7 || videoID < 1));
 		
-		Provider bitly = as("vergo777", "R_6a13f014b38f4f80a31cf7d80a7c18c7");
-		String[] shortLinks = new String[episodeLinks.length];
-		
-		for(int i=0;i<episodeLinks.length;i++) {
-			doc = Jsoup.connect(episodeLinks[i]).get();
-			Element content = doc.getElementById("divDownload");
-			Elements links = content.getElementsByTag("a");
-			
-			for (Element link : links) {
-				String linkHref = link.attr("href");
-				String linkText = link.text();
-				if(linkText.equals(videoQuality)) {
-					Url url = bitly.call(shorten(linkHref));
-					shortLinks[i] = url.getShortUrl(); 
-				}
-			}
-		}
-		
-		System.out.println("Outputting download links to txt file"); 
-		
-		PrintWriter writer = new PrintWriter("download.txt", "UTF-8");
-		
-		for(int i=0;i<episodeLinks.length;i++) {
-			writer.println(shortLinks[i]);
-		}
-		writer.close();
-		
-		System.out.println("Your download links are now available in download.txt in the same directory");
-		
-		System.exit(0);
+		return videoQuality; 
 	}
 }
