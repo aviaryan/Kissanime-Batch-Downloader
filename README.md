@@ -1,4 +1,13 @@
-Generates direct batch links for Kissanime episodes 
+Download instructions
+======================
+
+Simply go to kissanime/Executable Version and download the two files present there. Put them in the same directory and 
+click on the KissanimeLinks.exe - https://github.com/Vergo777/Kissanime-LinkDownload/tree/master/Executable%20version%20(DOWNLOAD%20THIS)
+
+Alternatively you can just download the zip file from here - http://a.pomf.se/iohvav.zip
+
+
+Description and usage instructions
 ======================
 
 If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
@@ -18,12 +27,4 @@ Once you have all the links you can copy all of them and use something like Inte
 The application has two modes - one takes a text file of individual episode page links from Kissanime and generates direct download links for each episode, probably useful if you want to batch download a series using a download manager or something since it's tedious to visit each page one by one and grab the download link again and again
 
 The second mode adds the option of getting all the individual page links automatically from one particular series if you provide the link to the main page
-
-Usage instructions 
-======================
-
-Simply go to kissanime/Executable Version and download the two files present there. Put them in the same directory and 
-click on the KissanimeLinks.exe - https://github.com/Vergo777/Kissanime-LinkDownload/tree/master/Executable%20version%20(DOWNLOAD%20THIS)
-
-Alternatively you can just download the zip file from here - http://a.pomf.se/ybrwee.zip
 
