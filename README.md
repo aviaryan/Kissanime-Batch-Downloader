@@ -1,11 +1,9 @@
 Download instructions
 ======================
 
-Simply go to kissanime/Executable Version and download the two files present there. Put them in the same directory and 
-click on the KissanimeLinks.exe - https://github.com/Vergo777/Kissanime-LinkDownload/tree/master/Executable%20version%20(DOWNLOAD%20THIS)
+Download the zip file from here - http://a.pomf.se/sqbvdz.zip
 
-Alternatively you can just download the zip file from here - http://a.pomf.se/iohvav.zip
-
+Extract the two files within, put them in the same directory and click on KissanimeLinks.exe 
 
 Description and usage instructions
 ======================
