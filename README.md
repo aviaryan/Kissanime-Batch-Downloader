@@ -1,7 +1,9 @@
 Download instructions
 ======================
 
-Download the zip file from here - http://a.pomf.se/sqbvdz.zip
+Grab the latest release from here - https://github.com/Vergo777/Kissanime-LinkDownload/releases
+
+Alternatively, download the zip file from here - http://a.pomf.se/sqbvdz.zip
 
 Extract the two files within, put them in the same directory and click on KissanimeLinks.exe 
 
