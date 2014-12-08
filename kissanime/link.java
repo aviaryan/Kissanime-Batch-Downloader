@@ -101,7 +101,7 @@ class link {
 		String[] shortLinks = new String[episodeLinks.length];
 		
 		for(int i=0;i<episodeLinks.length;i++) {
-			doc = Jsoup.connect(episodeLinks[i]).get();
+			doc = Jsoup.connect(episodeLinks[i]).userAgent("Mozilla").get();
 			Element content = doc.getElementById("divDownload");
 			Elements links = content.getElementsByTag("a");
 			
