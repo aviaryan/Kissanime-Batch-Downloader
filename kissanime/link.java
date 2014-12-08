@@ -39,7 +39,7 @@ class link {
 		System.out.println("Getting download links, please be patient"); 
 		
 		for(int i=0;i<count;i++) {
-			Document doc = Jsoup.connect(names[i]).get();
+			Document doc = Jsoup.connect(names[i]).userAgent("Mozilla").get();	// apparently adding a useragent makes aaaaall the difference wtf
 			Element content = doc.getElementById("divDownload");
 			Elements links = content.getElementsByTag("a");
 			
@@ -71,7 +71,7 @@ class link {
 		Scanner in = new Scanner(System.in);
 		String animePage = in.next(); 
 
-		Document doc = Jsoup.connect(animePage).get();
+		Document doc = Jsoup.connect(animePage).userAgent("Mozilla").get();	// adding user agent again to avoid 403
 		
 		Elements isAnimePage = doc.select("table.listing > tbody > tr > th"); 
 		
