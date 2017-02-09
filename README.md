@@ -10,7 +10,7 @@ A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
 Go to an anime page on KissAnime (eg http://kissanime.ru/Anime/Haikyuu), then open JavaScript console and run 
 
 ```js
-$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js")
 ```
 
 
@@ -29,7 +29,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime
 * Paste the following into the console window and press enter 
 
 ```js
-$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js")
 ```
 
 ![Screenshot](https://a.pomf.se/svfhlk.png)
