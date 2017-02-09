@@ -16,17 +16,17 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime
 
 ## Description and usage instructions
 
-1. Login to Kissanime using your account (make one if needed) 
+* Login to Kissanime using your account (make one if needed) 
 
-2. Go to the main page of the anime you want to download (e.g. [Haikyuu](http://kissanime.ru/Anime/Haikyuu)) 
+* Go to the main page of the anime you want to download (e.g. [Haikyuu](http://kissanime.ru/Anime/Haikyuu)) 
 
 ![Screenshot](https://a.pomf.se/udpztv.png)
 
-3. Open JavaScript console from the Developer Options.
+* Open JavaScript console from the Developer Options.
 
 ![Screenshot](https://a.pomf.se/sndhdw.png)
 
-4. Paste the following into the console window and press enter 
+* Paste the following into the console window and press enter 
 
 ```js
 $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
@@ -34,25 +34,25 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime
 
 ![Screenshot](https://a.pomf.se/svfhlk.png)
 
-5. Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
+* Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
 
 ![Screenshot](https://a.pomf.se/rsuhqo.png)
 
-6. Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
+* Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
 
 ![Screenshot](https://a.pomf.se/iefobt.png)
 
-7. Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
+* Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
 
 ![Screenshot](https://a.pomf.se/hqvfvo.png)
 
 ![Screenshot](https://a.pomf.se/bdjswc.png)
 
-8. Wait till all links are generated.
+* Wait till all links are generated.
 
 ![Screenshot](https://a.pomf.se/kpejyt.png)
 
-9. Once the process is completed, a window will open with the list of links.
+* Once the process is completed, a window will open with the list of links.
 
 
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
