@@ -13,6 +13,6 @@ start=1
 
 while read p; do
 	# echo $start
-	aria2c $p -o "Episode_"$start".mp4"
+	aria2c $p -x 2 -s 2 -o "Episode_"$start".mp4"
 	let start+=1
 done < $1
