@@ -8,6 +8,7 @@ var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('
 $.ajaxSetup({async:false});
 $.getScript("http://kissanime.com/Scripts/asp.js");
 
+console.log('Starting Kissanime Batch Downloader script...');
 
 var startEpisode;
 do {
@@ -37,7 +38,10 @@ var videoQuality = prompt(
 var i;
 var linkStr = "";
 
+console.log('Starting to fetch links..');
+
 for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
+	console.log('Fetching Episode ' + (episodeLinks.length - i));
 	jQuery.ajax({
 		url: URL + episodeLinks[i], 
 		success: function(result) {
@@ -55,7 +59,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 				if (videoQuality == $(el).html()){
 					long_url = $(el).attr('href');
 					linkStr += long_url + "\n";
-					console.log('Episode ' + (episodeLinks.length - i));
+					// console.log('Episode ' + (episodeLinks.length - i));
 					console.log(long_url);
 				}
 			});
@@ -94,6 +98,7 @@ function download(filename, text) {
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 	element.setAttribute('download', filename);
 	// element.setAttribute('target', '_blank');
+	// ^^ problems with safari
 
 	element.style.display = 'none';
 	document.body.appendChild(element);
