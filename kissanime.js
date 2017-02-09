@@ -1,3 +1,6 @@
+// python -m http.server
+// http://localhost:8000/kissanime.js
+
 var URL = window.location.origin
 
 var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('href'); });
@@ -36,21 +39,41 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
          url:    URL + episodeLinks[i], 
          success: function(result) {
                     var $result = eval($(result));
-					var stringStart = result.search("var wra"); 
-					var stringEnd = result.search("document.write"); 
-					var javascriptToExecute = result.substring(stringStart, stringEnd);
-					eval(javascriptToExecute);
+					// var stringStart = result.search("var wra"); 
+					// var stringEnd = result.search("document.write"); 
+					// var javascriptToExecute = result.substring(stringStart, stringEnd);
+					// eval(javascriptToExecute);
 					
-					$("body").append('<div id="episode' + i + '" style="display: none;"></div>')
-					$('#episode' + i).append(wra); 
+					console.log(result.search("Save link as"));
+					console.log(result.search("divDownload"));
+
+					var data = $(result).find("#divDownload");  // download data
+					var links = $(data[0]).find("a");
+					// console.log(links);
 					
-					var downloadQualityOptions = $('#episode' + i + ' a').map(function(i,el) { return $(el); });
-					var j; 
+					// $("body").append('<div id="episode' + i + '" style="display: none;"></div>')
+					// $('#episode' + i).append(wra);
+					
+					// var downloadQualityOptions = $('#episode' + i + ' a').map(function(i,el) { return $(el); });
+					$.each(links, function(i, el) {
+						console.log(el);
+						if (videoQuality == $(el).html()){
+							long_url = $(el).attr('href');
+							console.log(long_url);
+						}
+					});
+
+					var downloadQualityOptions = $(data).map(function(i,el) { return $(el); });
+					var j;
 					for(j = 0; j < downloadQualityOptions.length; j++) {
+						// debug
+						console.log(downloadQualityOptions[j].length());
+
 						if(videoQuality === downloadQualityOptions[j].html()) {
 							long_url = downloadQualityOptions[j].attr('href');
-							console.log(i); 
-							get_short_url(long_url, login, api_key);
+							console.log(i);
+							console.log(long_url);
+							// get_short_url(long_url, login, api_key);
 						}
 					}
                   },
