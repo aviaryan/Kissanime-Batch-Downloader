@@ -1,5 +1,10 @@
 # Kissanime batch links generator
 
+Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. You can choose the starting episode, 
+the ending episode and the quality (resolution) of downloads.
+
+------
+
 Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
 
 **Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
