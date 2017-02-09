@@ -1,7 +1,9 @@
 # Kissanime batch links generator
 
-Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. You can choose the starting episode, 
-the ending episode and the quality (resolution) of downloads.
+Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. 
+Once you have the list; use IDM, DownThemAll, wget or aria2c to download the anime series.
+
+Before fetching the links, you can choose the starting episode, the ending episode and the quality (resolution) of downloads. 
 
 ------
 
