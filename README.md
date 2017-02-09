@@ -4,6 +4,8 @@ Adapted from https://github.com/Vergo777/Kissanime-LinkDownload
 
 A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
 
+**Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
+
 
 ## How to use the script 
 
