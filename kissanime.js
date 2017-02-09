@@ -8,9 +8,6 @@ var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('
 $.ajaxSetup({async:false});
 $.getScript("http://kissanime.com/Scripts/asp.js");
 
-var login = "vergo777";
-var api_key = "R_6a13f014b38f4f80a31cf7d80a7c18c7";
-var long_url; 
 
 var startEpisode;
 do {
@@ -63,22 +60,4 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
          async:   false, 
 		 script:  true
     });       
-}
-
-
-function get_short_url(long_url, login, api_key){
-    $.getJSON(
-        "http://api.bitly.com/v3/shorten?callback=?", 
-        { 
-            "format": "json",
-            "apiKey": api_key,
-            "login": login,
-            "longUrl": long_url, 
-			async: true
-        },
-        function(response)
-        {
-            console.log(response.data.url);
-        }
-    ); 
 }
