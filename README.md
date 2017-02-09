@@ -55,3 +55,11 @@ $.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading
 
 
+#### Downloading the links
+
+Use [aria2](https://aria2.github.io). 
+
+```
+aria2c -i file_with_links.txt
+```
+
