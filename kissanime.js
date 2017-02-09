@@ -30,11 +30,13 @@ do {
 } while(true);
 
 var videoQuality = prompt(
-	"Enter video quality you want to download. Example - '960x720.mp4' (without the quotes)", 
+	"Enter video quality you want to download. Example - '640x360.mp4' (without the quotes)", 
 	defaultText="854x480.mp4"
 );
 
 var i;
+var linkStr = "";
+
 for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
 	jQuery.ajax({
          url:    URL + episodeLinks[i], 
@@ -52,6 +54,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 						// console.log(el);
 						if (videoQuality == $(el).html()){
 							long_url = $(el).attr('href');
+							linkStr += long_url + "\n";
 							console.log('Episode ' + (episodeLinks.length - i));
 							console.log(long_url);
 						}
@@ -59,5 +62,43 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
                   },
          async:   false, 
 		 script:  true
-    });       
+    });
+}
+
+// createGlotSnippet(linkStr)
+console.log('Opening list of links')
+download("links.txt", linkStr)
+
+
+function createGlotSnippet(string){
+	$.ajax({
+		type: "POST",
+		url: 'https://snippets.glot.io/snippets',
+		data: {
+			"language": "python", 
+			"title": "download_links.txt", 
+			"dataType": "json",
+        	"crossDomain": true,
+			"public": true, 
+			"files": [{"name": "list.txt", "content": string}]
+		},
+		success: function(data, textStatus, jqXHR){
+			console.log(data)
+		}
+	});
+}
+
+// http://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+  // element.setAttribute('target', '_blank');
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
