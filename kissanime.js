@@ -44,6 +44,8 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 	console.log('Fetching Episode ' + (episodeLinks.length - i));
 	jQuery.ajax({
 		url: URL + episodeLinks[i], 
+		tryCount : 0,
+		retryLimit : 3,
 		success: function(result) {
 			var $result = eval($(result));
 			
@@ -63,6 +65,17 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 					console.log(long_url);
 				}
 			});
+		},
+		error: function(xhr, textStatus, errorThrown ) {
+			console.log(textStatus)
+			// http://stackoverflow.com/questions/10024469/whats-the-best-way-to-retry-an-ajax-request-on-failure-using-jquery
+			this.tryCount++;
+			if (this.tryCount <= this.retryLimit) {
+				//try again
+				console.log('Retrying..');
+				$.ajax(this);
+			}
+			return;
 		},
 		async:   false, 
 		script:  true
