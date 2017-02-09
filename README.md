@@ -1,13 +1,17 @@
 ## Kissanime batch links generator
 
-Adapted from https://github.com/Vergo777/Kissanime-LinkDownload 
+Adapted from https://github.com/Vergo777/Kissanime-LinkDownload
+
 A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
 
 
 #### How to use the script 
 
-$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+Go to an anime page on KissAnime (eg http://kissanime.ru/Anime/Haikyuu), then open JavaScript console and run 
 
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+```
 
 
 #### Description and usage instructions
