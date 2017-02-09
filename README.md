@@ -20,11 +20,11 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Go to the main page of the anime you want to download (e.g. [Haikyuu](http://kissanime.ru/Anime/Haikyuu)) 
 
-![Screenshot](https://a.pomf.se/udpztv.png)
+![KissAnime Haikyuu](https://cloud.githubusercontent.com/assets/4047597/22774534/913bebf2-eecd-11e6-9e30-24e6f9c47481.jpg)
 
 * Open JavaScript console from the Developer Options.
 
-![Screenshot](https://a.pomf.se/sndhdw.png)
+![JavaScript console](https://cloud.githubusercontent.com/assets/4047597/22774613/f6a56a22-eecd-11e6-9f56-aad2f80e948c.jpg)
 
 * Paste the following into the console window and press enter 
 
@@ -32,28 +32,23 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js")
 ```
 
-![Screenshot](https://a.pomf.se/svfhlk.png)
+![Enter script](https://cloud.githubusercontent.com/assets/4047597/22774680/34679d1c-eece-11e6-9ebc-52d7c8dc66d8.jpg)
 
 * Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
 
-![Screenshot](https://a.pomf.se/rsuhqo.png)
+![Enter episode number](https://cloud.githubusercontent.com/assets/4047597/22774759/8e3e9b42-eece-11e6-99e0-7944f6d8a754.jpg)
 
 * Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
 
-![Screenshot](https://a.pomf.se/iefobt.png)
-
 * Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
-
-![Screenshot](https://a.pomf.se/hqvfvo.png)
-
-![Screenshot](https://a.pomf.se/bdjswc.png)
 
 * Wait till all links are generated.
 
-![Screenshot](https://a.pomf.se/kpejyt.png)
+![screen shot 2017-02-09 at 1 50 29 pm](https://cloud.githubusercontent.com/assets/4047597/22774908/4674300a-eecf-11e6-8ec7-02124461fb00.jpg)
 
 * Once the process is completed, a window will open with the list of links.
 
+![screen shot 2017-02-09 at 1 51 16 pm](https://cloud.githubusercontent.com/assets/4047597/22774909/472f4034-eecf-11e6-8cbc-26e935bcca47.jpg)
 
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
 
