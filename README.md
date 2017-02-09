@@ -1,11 +1,11 @@
-## Kissanime batch links generator
+# Kissanime batch links generator
 
 Adapted from https://github.com/Vergo777/Kissanime-LinkDownload
 
 A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
 
 
-#### How to use the script 
+## How to use the script 
 
 Go to an anime page on KissAnime (eg http://kissanime.ru/Anime/Haikyuu), then open JavaScript console and run 
 
@@ -14,7 +14,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime
 ```
 
 
-#### Description and usage instructions
+## Description and usage instructions
 
 If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
 
@@ -59,7 +59,7 @@ $.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading
 
 
-#### Downloading the links
+## Downloading the links
 
 Use [aria2](https://aria2.github.io). 
 
