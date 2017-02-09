@@ -1,8 +1,6 @@
 # Kissanime batch links generator
 
-Adapted from https://github.com/Vergo777/Kissanime-LinkDownload
-
-A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
+Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
 
 **Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
 
@@ -16,7 +14,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 ```
 
 
-## Description and usage instructions
+## Detailed instructions
 
 * Login to Kissanime using your account (make one if needed) 
 
