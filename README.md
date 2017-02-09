@@ -16,50 +16,49 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime
 
 ## Description and usage instructions
 
-If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
+1. Login to Kissanime using your account (make one if needed) 
 
-This app avoids that by basically allowing you to simply go to the main anime page, run the script and automatically get direct download links for all the episodes 
-
-The detailed steps to use this script are as follows - 
-
-##1. Login to Kissanime using your account (make one if needed) 
-
-##2. Go to the main page of the anime you want to download (e.g. Wake up Girls) 
+2. Go to the main page of the anime you want to download (e.g. [Haikyuu](http://kissanime.ru/Anime/Haikyuu)) 
 
 ![Screenshot](https://a.pomf.se/udpztv.png)
 
-##3. Press F12 and click on the console tab 
+3. Open JavaScript console from the Developer Options.
 
 ![Screenshot](https://a.pomf.se/sndhdw.png)
 
-##4. Paste the following into the console window and press enter 
+4. Paste the following into the console window and press enter 
 
-$.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime.js")
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+```
 
 ![Screenshot](https://a.pomf.se/svfhlk.png)
 
-##5. Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
+5. Enter the episode number from which you'd like to start generating download links (e.g. ep 3)  
 
 ![Screenshot](https://a.pomf.se/rsuhqo.png)
 
-##6. Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
+6. Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
 
 ![Screenshot](https://a.pomf.se/iefobt.png)
 
-##7. Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
+7. Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
 
 ![Screenshot](https://a.pomf.se/hqvfvo.png)
 
 ![Screenshot](https://a.pomf.se/bdjswc.png)
 
-##8. Wait till all links are generated, and then copy them from the console window! 
+8. Wait till all links are generated.
 
 ![Screenshot](https://a.pomf.se/kpejyt.png)
 
-Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading
+9. Once the process is completed, a window will open with the list of links.
 
 
-## Downloading the links
+Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
+
+
+## Downloading the links in Linux/Mac
 
 Use [aria2](https://aria2.github.io). 
 
