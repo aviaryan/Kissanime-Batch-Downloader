@@ -17,7 +17,7 @@ do {
 	} else {
 		break; 
 	}
-} while(true); 
+} while(true);
 
 var endEpisode; 
 do {
@@ -39,30 +39,30 @@ var linkStr = "";
 
 for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
 	jQuery.ajax({
-         url:    URL + episodeLinks[i], 
-         success: function(result) {
-                    var $result = eval($(result));
-					
-					// console.log(result.search("Save link as"));
-					// console.log(result.search("divDownload"));
+		url: URL + episodeLinks[i], 
+		success: function(result) {
+			var $result = eval($(result));
+			
+			// console.log(result.search("Save link as"));
+			// console.log(result.search("divDownload"));
 
-					var data = $(result).find("#divDownload");  // download data
-					var links = $(data[0]).find("a");
-					// console.log(links);
-					
-					$.each(links, function(index, el) {
-						// console.log(el);
-						if (videoQuality == $(el).html()){
-							long_url = $(el).attr('href');
-							linkStr += long_url + "\n";
-							console.log('Episode ' + (episodeLinks.length - i));
-							console.log(long_url);
-						}
-					});
-                  },
-         async:   false, 
-		 script:  true
-    });
+			var data = $(result).find("#divDownload");  // download data
+			var links = $(data[0]).find("a");
+			// console.log(links);
+			
+			$.each(links, function(index, el) {
+				// console.log(el);
+				if (videoQuality == $(el).html()){
+					long_url = $(el).attr('href');
+					linkStr += long_url + "\n";
+					console.log('Episode ' + (episodeLinks.length - i));
+					console.log(long_url);
+				}
+			});
+		},
+		async:   false, 
+		script:  true
+	});
 }
 
 // createGlotSnippet(linkStr)
@@ -78,7 +78,7 @@ function createGlotSnippet(string){
 			"language": "python", 
 			"title": "download_links.txt", 
 			"dataType": "json",
-        	"crossDomain": true,
+			"crossDomain": true,
 			"public": true, 
 			"files": [{"name": "list.txt", "content": string}]
 		},
@@ -90,15 +90,15 @@ function createGlotSnippet(string){
 
 // http://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server
 function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
-  // element.setAttribute('target', '_blank');
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download', filename);
+	// element.setAttribute('target', '_blank');
 
-  element.style.display = 'none';
-  document.body.appendChild(element);
+	element.style.display = 'none';
+	document.body.appendChild(element);
 
-  element.click();
+	element.click();
 
-  document.body.removeChild(element);
+	document.body.removeChild(element);
 }
