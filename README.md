@@ -1,10 +1,16 @@
-How to use the script 
-======================
+## Kissanime batch links generator
 
-$.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime.js")
+Adapted from https://github.com/Vergo777/Kissanime-LinkDownload 
+A lot of thanks to [@Vergo777](https://github.com/Vergo777) for your great work.
 
-Description and usage instructions
-======================
+
+#### How to use the script 
+
+$.getScript("https://rawgit.com/aviaryan/Kissanime-LinkDownload/master/kissanime.js")
+
+
+
+#### Description and usage instructions
 
 If you're a free user on Kissanime and want to download multiple episodes at once, you'd usually have to visit each episode page individually one by one and get the download link again and again 
 
@@ -47,3 +53,5 @@ $.getScript("https://rawgit.com/Vergo777/Kissanime-LinkDownload/master/kissanime
 ![Screenshot](https://a.pomf.se/kpejyt.png)
 
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading
+
+
