@@ -53,11 +53,13 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
 
 
-## Downloading the links in Linux/Mac
+## Downloading links through command line
 
-Use [aria2](https://aria2.github.io). 
+Use [aria2](https://aria2.github.io). It is a cross-platform application available on Mac, Linux and Windows.
 
 ```
 aria2c -i file_with_links.txt
 ```
+
+You can also use [aria2_helper.sh](aria2_helper.sh) for a better downloading experience.
 
