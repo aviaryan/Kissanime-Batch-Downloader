@@ -5,7 +5,7 @@ Once you have the list; use IDM, DownThemAll, wget or aria2c to download the ani
 
 Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
 
-Having problems with script? Maybe it's an issue with KissAnime. See #3. 
+Having problems with script? Maybe it's an issue with KissAnime. See [#3](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/3). 
 If it's something else, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new)
 
 ------
