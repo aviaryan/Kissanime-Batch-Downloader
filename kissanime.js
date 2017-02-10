@@ -31,8 +31,8 @@ do {
 } while(true);
 
 var videoQuality = prompt(
-	"Enter video quality you want to download. Example - '640x360.mp4' (without the quotes)", 
-	defaultText="854x480.mp4"
+	"Enter video quality preferences for the download. Example - '720,480'\nThis first looks for 720p, if 720 is not available, it picks 480.", 
+	defaultText="720,480"
 );
 
 var i;
@@ -56,15 +56,26 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			var links = $(data[0]).find("a");
 			// console.log(links);
 			
-			$.each(links, function(index, el) {
-				// console.log(el);
-				if (videoQuality == $(el).html()){
-					long_url = $(el).attr('href');
-					linkStr += long_url + "\n";
-					// console.log('Episode ' + (episodeLinks.length - i));
-					console.log(long_url);
-				}
-			});
+			var quals = videoQuality.split(',');
+			var found = false;
+			// pick download
+			for (var j=0; j<quals.length; j++){
+				// check if the format exists or not
+				if (found)
+					return;
+
+				$.each(links, function(index, el) {
+					// console.log(el);
+					if ( $(el).html().search(quals[j]) > -1 ){
+						long_url = $(el).attr('href');
+						linkStr += long_url + "\n";
+						found = true;
+						// console.log('Episode ' + (episodeLinks.length - i));
+						console.log(long_url);
+					}
+				});
+			}
+			// successful response processed
 		},
 		error: function(xhr, textStatus, errorThrown ) {
 			console.log(textStatus)
