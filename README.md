@@ -3,7 +3,7 @@
 Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. 
 Once you have the list; use IDM, DownThemAll, wget or aria2c to download the anime series.
 
-Before fetching the links, you can choose the starting episode, the ending episode and the quality (resolution) of downloads. 
+Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
 
 ------
 
@@ -47,7 +47,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Enter the final episode number till which you'd like to generate download links (e.g. ep 9)  
 
-* Enter the video quality you'd like to get. This can be found on any episode page. (e.g. 1280x720.mp4)  
+* Enter your resolution preference. Eg > `720,480,360`
 
 * Wait till all links are generated.
 
