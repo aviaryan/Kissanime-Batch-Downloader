@@ -11,7 +11,8 @@
 
 start=1
 
-while read p; do
+while read p || [ -n "$p" ]; do
+	# last line bug ^^ : http://stackoverflow.com/questions/12916352/
 	# echo $start
 	aria2c $p -x 2 -s 2 -o "Episode_"$start".mp4"
 	let start+=1
