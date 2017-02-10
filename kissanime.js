@@ -12,7 +12,7 @@ console.log('Starting Kissanime Batch Downloader script...');
 
 var startEpisode;
 do {
-	startEpisode = prompt("Enter episode number you want to start from", defaultText="1");
+	startEpisode = Number(prompt("Enter episode number you want to start from", defaultText="1"));
 	if(startEpisode <= 0 || startEpisode > episodeLinks.length) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps"); 
 	} else {
@@ -20,9 +20,9 @@ do {
 	}
 } while(true);
 
-var endEpisode; 
+var endEpisode;
 do {
-	endEpisode = prompt("Enter episode number you want to end at", defaultText="2");
+	endEpisode = Number(prompt("Enter episode number you want to end at", defaultText="2"));
 	if(endEpisode <= 0 || endEpisode > episodeLinks.length || endEpisode < startEpisode) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps");
 	} else {
@@ -34,6 +34,10 @@ var videoQuality = prompt(
 	"Enter video quality preferences for the download. Example - '720,480'\nThis first looks for 720p, if 720 is not available, it picks 480.", 
 	defaultText="720,480"
 );
+
+if (videoQuality == null){
+	videoQuality = "720,480,360";
+}
 
 var i;
 var linkStr = "";
