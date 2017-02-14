@@ -62,7 +62,8 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 
 			if (data == null || data == "" || data.length == 0){ // captcha maybe
 				console.log("Captcha detected at " + URL + episodeLinks[i]);
-				prompt("Captcha detected. Go solve it. After solving, press OK here. Link = " + URL + episodeLinks[i], defaultText="Solved");
+				prompt("Captcha detected. Solve it by opening the link below in a new tab. After solving, press OK.",
+					defaultText=URL + episodeLinks[i]);
 				this.tryCount++;
 				$.ajax(this);  // retry
 				return;

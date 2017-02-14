@@ -73,3 +73,12 @@ aria2c -i file_with_links.txt
 
 You can also use [aria2_helper.sh](aria2_helper.sh) for a better downloading experience.
 
+
+
+## Working around with Captchas
+
+At times, KissAnime blocks users from fetching multiple episodes using a Captcha. 
+When this script detects a captcha, it shows a prompt and thereby pauses its execution.
+Then you will be given a link of the page with the captcha.
+Go to that link in a new tab and solve the captcha. 
+Once solved, come back to the anime list and click on OK in the prompt to resume the script.
