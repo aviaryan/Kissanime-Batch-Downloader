@@ -59,6 +59,13 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 
 			var data = $(result).find("#divDownload");  // download data
 			var links = $(data[0]).find("a");
+
+			if (data == null || data == "" || data.length == 0){ // captcha maybe
+				console.log("Captcha detected at " + URL + episodeLinks[i]);
+				prompt("Captcha detected. Go solve it. Link = " + URL + episodeLinks[i], defaultText="Solved");
+				this.tryCount++;
+				$.ajax(this);  // retry
+			}
 			// console.log(links);
 			
 			var quals = videoQuality.split(',');
