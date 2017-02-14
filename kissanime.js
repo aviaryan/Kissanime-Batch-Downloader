@@ -4,6 +4,7 @@
 var URL = window.location.origin
 
 var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('href'); });
+var episodeNames = $('table.listing a').map(function(i,el) { return $.trim( $(el).html() ); });
 
 $.ajaxSetup({async:false});
 $.getScript("http://kissanime.com/Scripts/asp.js");
@@ -12,7 +13,7 @@ console.log('Starting Kissanime Batch Downloader script...');
 
 var startEpisode;
 do {
-	startEpisode = Number(prompt("Enter episode number you want to start from", defaultText="1"));
+	startEpisode = Number(prompt("Enter episode (listing) number you want to start from", defaultText="1"));
 	if(startEpisode <= 0 || startEpisode > episodeLinks.length) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps"); 
 	} else {
@@ -22,7 +23,7 @@ do {
 
 var endEpisode;
 do {
-	endEpisode = Number(prompt("Enter episode number you want to end at", defaultText="2"));
+	endEpisode = Number(prompt("Enter episode (listing) number you want to end at", defaultText="2"));
 	if(endEpisode <= 0 || endEpisode > episodeLinks.length || endEpisode < startEpisode) {
 		alert("Episode number entered must be greater than 0 and lesser than total number of eps");
 	} else {
@@ -45,7 +46,7 @@ var linkStr = "";
 console.log('Starting to fetch links..');
 
 for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
-	console.log('Fetching Episode ' + (episodeLinks.length - i));
+	console.log('Fetching listing ' + (episodeLinks.length - i) + ' [' + episodeNames[i] + ']');
 	jQuery.ajax({
 		url: URL + episodeLinks[i], 
 		tryCount : 0,
