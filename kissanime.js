@@ -1,15 +1,20 @@
 // python -m http.server
 // http://localhost:8000/kissanime.js
 
+// CONFIG
+var siteName = "Kissanime"
+var rootUrl = 'http://kissanime.com'
 var URL = window.location.origin
+// END CONFIG
+
 
 var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('href'); });
 var episodeNames = $('table.listing a').map(function(i,el) { return $.trim( $(el).html() ); });
 
 $.ajaxSetup({async:false});
-$.getScript("http://kissanime.com/Scripts/asp.js");
+$.getScript(rootUrl + "/Scripts/asp.js");
 
-console.log('Starting Kissanime Batch Downloader script...');
+console.log('Starting ' + siteName + ' Batch Downloader script...');
 
 var startEpisode;
 do {
