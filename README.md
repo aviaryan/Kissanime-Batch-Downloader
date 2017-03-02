@@ -26,6 +26,9 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 ## Detailed instructions
 
+**These instructions are for KissAnime. Similar instructions go for KissCartoon and KissAsian.**
+
+
 * Login to Kissanime using your account (make one if needed) 
 
 * Go to the main page of the anime you want to download (e.g. [Haikyuu](http://kissanime.ru/Anime/Haikyuu)) 
@@ -82,3 +85,15 @@ When this script detects a captcha, it shows a prompt and thereby pauses its exe
 Then you will be given a link of the page with the captcha.
 Go to that link in a new tab and solve the captcha. 
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
+
+
+## FAQ
+
+#### $.getScript(...) doesn't do anything ?
+
+Maybe the script is being blocked. To bypass this, just copy the contents of the script and paste it in the Console. 
+For example, if you had this problem with KissAnime, you take it's script which is 
+https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js
+and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAnime console. 
+
+ 
