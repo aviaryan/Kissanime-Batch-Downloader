@@ -1,11 +1,11 @@
-# Kissanime batch links generator
+# KissAnime, KissAsian, KissCartoon batch links generator
 
-Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. 
-Once you have the list; use IDM, DownThemAll, wget or aria2c to download the anime series.
+Scripts that fetch download links of any series on KissAnime, KissAsian or KissCartoon and gives them to you in the form of a list. 
+Once you have the list; use IDM, DownThemAll, wget or aria2c to download the series.
 
 Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
 
-Having problems with script? Maybe it's an issue with KissAnime. See [#3](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/3). 
+Having problems with script? Maybe it's an issue with KissXXXX website. See [#3](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/3). 
 If it's something else, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new)
 
 ------
@@ -23,8 +23,20 @@ Go to an anime page on KissAnime (eg http://kissanime.ru/Anime/Haikyuu), then op
 $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js")
 ```
 
+For cartoons, go to a cartoon page on KissCartoon (eg http://kisscartoon.se/Cartoon/Shimmer-and-Shine-Season-2), then open JavaScript console and run
 
-## Detailed instructions
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kisscartoon.js")
+```
+
+For KissAsian, go to a series listing page (eg http://kissasian.com/Drama/My-Bromance-The-Series), then open JavaScript console and run
+
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js")
+```
+
+
+## Detailed instructions (taking KissAnime)
 
 **These instructions are for KissAnime. Similar instructions go for KissCartoon and KissAsian.**
 
@@ -80,7 +92,7 @@ You can also use [aria2_helper.sh](aria2_helper.sh) for a better downloading exp
 
 ## Working around with Captchas
 
-At times, KissAnime blocks users from fetching multiple episodes using a Captcha. 
+At times, KissXXXX blocks users from fetching multiple episodes using a Captcha. 
 When this script detects a captcha, it shows a prompt and thereby pauses its execution.
 Then you will be given a link of the page with the captcha.
 Go to that link in a new tab and solve the captcha. 
@@ -96,4 +108,4 @@ For example, if you had this problem with KissAnime, you take it's script which 
 https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js
 and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAnime console. 
 
- 
+
