@@ -1,18 +1,19 @@
-# Kissanime batch links generator
+# KissAnime, KissAsian, KissCartoon batch links generator
 
-Script that fetches download links of an Anime series on KissAnime and gives them to you in the form of a list. 
-Once you have the list; use IDM, DownThemAll, wget or aria2c to download the anime series.
+Scripts that fetch download links of any series on KissAnime, KissAsian or KissCartoon and gives them to you in the form of a list. 
+Once you have the list; use IDM, DownThemAll, wget or aria2c to download the series.
 
 Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
 
-Having problems with script? Maybe it's an issue with KissAnime. See [#3](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/3). 
-If it's something else, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new)
+Having problems with script? See [FAQ](#faq). 
+If problem is not solved, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new).
 
-------
-
-Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
+> Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
 
 **Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
+
+**You need to login into KissXXXX website before using the script.**
+
 
 
 ## How to use the script 
@@ -23,8 +24,26 @@ Go to an anime page on KissAnime (eg http://kissanime.ru/Anime/Haikyuu), then op
 $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js")
 ```
 
+For cartoons, go to a cartoon page on KissCartoon (eg http://kisscartoon.se/Cartoon/Shimmer-and-Shine-Season-2), then open JavaScript console and run
 
-## Detailed instructions
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kisscartoon.js")
+```
+
+For KissAsian, go to a series listing page (eg http://kissasian.com/Drama/My-Bromance-The-Series), then open JavaScript console and run
+
+```js
+$.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js")
+// BUG
+// getScript may not work on KissAsian. Don't worry, that's not a problem. You will have to manually copy the code. See FAQ below.
+```
+
+
+
+## Detailed instructions (taking KissAnime)
+
+**These instructions are for KissAnime. Similar instructions go for KissCartoon and KissAsian.**
+
 
 * Login to Kissanime using your account (make one if needed) 
 
@@ -63,6 +82,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
 
 
+
 ## Downloading links through command line
 
 Use [aria2](https://aria2.github.io). It is a cross-platform application available on Mac, Linux and Windows.
@@ -77,8 +97,21 @@ You can also use [aria2_helper.sh](aria2_helper.sh) for a better downloading exp
 
 ## Working around with Captchas
 
-At times, KissAnime blocks users from fetching multiple episodes using a Captcha. 
+At times, KissXXXX blocks users from fetching multiple episodes using a Captcha. 
 When this script detects a captcha, it shows a prompt and thereby pauses its execution.
 Then you will be given a link of the page with the captcha.
 Go to that link in a new tab and solve the captcha. 
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
+
+
+
+## FAQ
+
+#### $.getScript(...) doesn't do anything ?
+
+Maybe the script is being blocked. To bypass this, just copy the contents of the script and paste it in the Console. 
+For example, if you had this problem with KissAsian, you take it's script which is 
+https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js
+and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAsian console. 
+
+
