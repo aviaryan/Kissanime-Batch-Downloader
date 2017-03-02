@@ -5,12 +5,10 @@ Once you have the list; use IDM, DownThemAll, wget or aria2c to download the ser
 
 Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
 
-Having problems with script? Maybe it's an issue with KissXXXX website. See [#3](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/3). 
-If it's something else, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new)
+Having problems with script? See [FAQ](#faq). 
+If problem is not solved, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new).
 
-------
-
-Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
+> Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was outdated and un-maintained so I decided to continue it. So thank you [@Vergo777](https://github.com/Vergo777).
 
 **Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
 
@@ -36,6 +34,8 @@ For KissAsian, go to a series listing page (eg http://kissasian.com/Drama/My-Bro
 
 ```js
 $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js")
+// BUG
+// getScript may not work on KissAsian. Don't worry, that's not a problem. You will have to manually copy the code. See FAQ below.
 ```
 
 
