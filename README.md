@@ -14,6 +14,9 @@ Forked from https://github.com/Vergo777/Kissanime-LinkDownload. That project was
 
 **Before using the script, read [TERMS OF USING](TERMS-OF-USING.md).**
 
+**You need to login into KissXXXX website before using the script.**
+
+
 
 ## How to use the script 
 
@@ -34,6 +37,7 @@ For KissAsian, go to a series listing page (eg http://kissasian.com/Drama/My-Bro
 ```js
 $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js")
 ```
+
 
 
 ## Detailed instructions (taking KissAnime)
@@ -78,6 +82,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
 
 
+
 ## Downloading links through command line
 
 Use [aria2](https://aria2.github.io). It is a cross-platform application available on Mac, Linux and Windows.
@@ -97,6 +102,7 @@ When this script detects a captcha, it shows a prompt and thereby pauses its exe
 Then you will be given a link of the page with the captcha.
 Go to that link in a new tab and solve the captcha. 
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
+
 
 
 ## FAQ
