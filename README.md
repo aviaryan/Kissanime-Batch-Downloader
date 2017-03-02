@@ -110,8 +110,8 @@ Once solved, come back to the anime list and click on OK in the prompt to resume
 #### $.getScript(...) doesn't do anything ?
 
 Maybe the script is being blocked. To bypass this, just copy the contents of the script and paste it in the Console. 
-For example, if you had this problem with KissAnime, you take it's script which is 
-https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissanime.js
-and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAnime console. 
+For example, if you had this problem with KissAsian, you take it's script which is 
+https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js
+and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAsian console. 
 
 
