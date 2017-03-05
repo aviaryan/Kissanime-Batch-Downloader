@@ -91,7 +91,7 @@ Use [aria2](https://aria2.github.io). It is a cross-platform application availab
 aria2c -i file_with_links.txt
 ```
 
-You can also use [aria2_helper.sh](helpers/aria2_helper.sh) for a better downloading experience.
+You can also use [aria2_basic_helper.sh](helpers/aria2_basic_helper.sh) for a better downloading experience.
 
 
 
