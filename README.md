@@ -96,8 +96,8 @@ aria2c -i file_with_links.txt
 You can also use [aria2_basic_helper.sh](helpers/aria2_basic_helper.sh) for a better downloading experience.
 
 
-## Better Download Filenames
 <a name="bdf"></a>
+## Better Download Filenames
 
 Enter "1" in step 4 of script configuration to output episode links with filenames. These filenames are derived from episode names on KissXXXX website. 
 You can use `wget` or `aria2c` to download the list of episodes with proper names. 
