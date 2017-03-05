@@ -104,14 +104,24 @@ Go to that link in a new tab and solve the captcha.
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
 
 
+## Better Download Filenames
+
+Enter "1" in step 4 of script configuration to output episode links with filenames. Then you can use `wget` or `aria2c` to download the list of episodes 
+with proper names. Note that you will have to use `aria2_helper.sh` or `wget_helper.sh` for downloading that list.
+
 
 ## FAQ
 
-#### $.getScript(...) doesn't do anything ?
+#### `$.getScript(...)` doesn't do anything ?
 
 Maybe the script is being blocked. To bypass this, just copy the contents of the script and paste it in the Console. 
 For example, if you had this problem with KissAsian, you take it's script which is 
 https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js
 and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAsian console. 
+
+
+#### Last link in my lists.txt won't download 
+
+Try adding an empty line after the last link.
 
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# USING
+# USING (suitable for option 1)
 # /path/to/wget_helper.sh list.txt
 # 
 # This scripts names files as -- 

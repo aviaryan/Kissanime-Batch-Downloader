@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# USING
+# USING (suitable for option 0)
 # /path/to/aria2_helper.sh list.txt
 # 
 # This scripts names files as -- 
