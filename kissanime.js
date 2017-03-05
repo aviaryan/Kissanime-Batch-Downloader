@@ -45,6 +45,15 @@ if (videoQuality == null){
 	videoQuality = "720,480,360";
 }
 
+var opOptions = prompt(
+	"How do you want output to be?\n0 = simple list of links\n1 = List with filenames (for wget, aria2 helper scripts)",
+	defaultText="0"
+);
+
+if (opOptions == null){
+	opOptions = "0";
+}
+
 var i;
 var linkStr = "";
 
@@ -87,7 +96,12 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 					// console.log(el);
 					if ( $(el).html().search(quals[j]) > -1 ){
 						long_url = $(el).attr('href');
-						linkStr += long_url + "\n";
+						name = getDownloadName(episodeNames[i], $(el).html());
+						if (opOptions == "1"){
+							linkStr += encodeURI(long_url) + " " + name + "\n";
+						} else {
+							linkStr += long_url + "\n";
+						}
 						found = true;
 						// console.log('Episode ' + (episodeLinks.length - i));
 						console.log(long_url);
@@ -129,4 +143,8 @@ function download(filename, text) {
 	element.click();
 
 	document.body.removeChild(element);
+}
+
+function getDownloadName(epName, dl){
+	return (epName + "__" + dl).replace(/\s/g, '_');
 }
