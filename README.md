@@ -101,7 +101,7 @@ You can also use [aria2_basic_helper.sh](helpers/aria2_basic_helper.sh) for a be
 
 Enter "1" in step 4 of script configuration to output episode links with filenames. These filenames are derived from episode names on KissXXXX website. 
 You can use `wget` or `aria2c` to download the list of episodes with proper names. 
-Note that you will have to use `aria2_helper.sh` or `wget_helper.sh` for downloading that list.
+Note that you will have to use [aria2_helper.sh](helpers/aria2_helper.sh) or [wget_helper.sh](helpers/wget_helper.sh) for downloading that list.
 
 
 ## Working around with Captchas
