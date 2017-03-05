@@ -3,7 +3,7 @@
 Scripts that fetch download links of any series on KissAnime, KissAsian or KissCartoon and gives them to you in the form of a list. 
 Once you have the list; use IDM, DownThemAll, wget or aria2c to download the series.
 
-Before fetching the links, you can choose the starting episode, the ending episode and the resolution preference order for downloads. 
+Before fetching the links, you can choose the starting episode, the ending episode, the resolution preference order for downloads and the output format of links. 
 
 Having problems with script? See [FAQ](#faq). 
 If problem is not solved, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new).
@@ -71,6 +71,8 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Enter your resolution preference. Eg > `720,480,360`
 
+* Enter the links output preference. `0` is for basic list of links (suitable for IDM, DownThemAll users), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users). 
+
 * Wait till all links are generated.
 
 ![screen shot 2017-02-09 at 1 50 29 pm](https://cloud.githubusercontent.com/assets/4047597/22774908/4674300a-eecf-11e6-8ec7-02124461fb00.jpg)
@@ -94,6 +96,12 @@ aria2c -i file_with_links.txt
 You can also use [aria2_basic_helper.sh](helpers/aria2_basic_helper.sh) for a better downloading experience.
 
 
+## Better Download Filenames
+<a name="bdf"></a>
+
+Enter "1" in step 4 of script configuration to output episode links with filenames. Then you can use `wget` or `aria2c` to download the list of episodes 
+with proper names. Note that you will have to use `aria2_helper.sh` or `wget_helper.sh` for downloading that list.
+
 
 ## Working around with Captchas
 
@@ -104,15 +112,9 @@ Go to that link in a new tab and solve the captcha.
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
 
 
-## Better Download Filenames
-
-Enter "1" in step 4 of script configuration to output episode links with filenames. Then you can use `wget` or `aria2c` to download the list of episodes 
-with proper names. Note that you will have to use `aria2_helper.sh` or `wget_helper.sh` for downloading that list.
-
-
 ## FAQ
 
-#### `$.getScript(...)` doesn't do anything ?
+### `$.getScript(...)` doesn't do anything ?
 
 Maybe the script is being blocked. To bypass this, just copy the contents of the script and paste it in the Console. 
 For example, if you had this problem with KissAsian, you take it's script which is 
@@ -120,7 +122,7 @@ https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissasian.js
 and open it in a new browser tab. Now you will be able to copy the script code. Just copy it and paste it in the KissAsian console. 
 
 
-#### Last link in my lists.txt won't download 
+### Last link in my lists.txt won't download 
 
 Try adding an empty line after the last link.
 
