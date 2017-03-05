@@ -4,8 +4,8 @@
 # /path/to/wget_helper.sh list.txt
 # 
 # This scripts names files as -- 
-# Listing Name 001.mp4 
-# Listing Name 002.mp4
+# Series_Episode_1__1280x720.mp4
+# Series_Episode_2__1280x720.mp4
 # .... and so on
 
 while read -r p filename tail; do
