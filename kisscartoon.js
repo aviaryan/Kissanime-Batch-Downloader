@@ -129,7 +129,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 						if (opOptions == "1"){
 							linkStr += encodeURI(long_url) + " " + name + "\n";
 						} else if (opOptions == "2"){
-							linkStr += '<a href="' + long_url + '">' + name + '</a><br>';
+							linkStr += '<a href="' + long_url + '" download="' + name + '">' + name + '</a><br>';
 						} else {
 							linkStr += long_url + "\n";
 						}
