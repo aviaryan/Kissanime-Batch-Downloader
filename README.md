@@ -3,7 +3,7 @@
 Scripts that fetch download links of any series on KissAnime, KissAsian or KissCartoon and gives them to you in the form of a list. 
 Once you have the list; use IDM, DownThemAll, wget or aria2c to download the series.
 
-Before fetching the links, you can choose the starting episode, the ending episode, the resolution preference order for downloads and the output format of links. 
+Before fetching the links, you can choose the starting episode, the ending episode, the resolution preference order for downloads and the [output format of links](#opf). 
 
 Having problems with script? See [FAQ](#faq). 
 If problem is not solved, please [open an issue](https://github.com/aviaryan/Kissanime-Batch-Downloader/issues/new).
@@ -71,6 +71,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Enter your resolution preference. Eg > `720,480,360`
 
+<a name="opf"></a>
 * Enter the links output preference. `0` is for basic list of links (works with any basic download tool), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for DownThemAll, [IDM](#idm)). 
 
 * Wait till all links are generated.
