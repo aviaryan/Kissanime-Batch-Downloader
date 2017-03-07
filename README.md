@@ -71,7 +71,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Enter your resolution preference. Eg > `720,480,360`
 
-* Enter the links output preference. `0` is for basic list of links (suitable for IDM, DownThemAll users), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for DownThemAll, [IDM](#idm)). 
+* Enter the links output preference. `0` is for basic list of links (works with any basic download tool), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for DownThemAll, [IDM](#idm)). 
 
 * Wait till all links are generated.
 
