@@ -71,7 +71,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 * Enter your resolution preference. Eg > `720,480,360`
 
-* Enter the links output preference. `0` is for basic list of links (suitable for IDM, DownThemAll users), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users). 
+* Enter the links output preference. `0` is for basic list of links (suitable for IDM, DownThemAll users), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for DownThemAll, [IDM](#idm)). 
 
 * Wait till all links are generated.
 
@@ -111,6 +111,13 @@ When this script detects a captcha, it shows a prompt and thereby pauses its exe
 Then you will be given a link of the page with the captcha.
 Go to that link in a new tab and solve the captcha. 
 Once solved, come back to the anime list and click on OK in the prompt to resume the script.
+
+<a name="idm"></a>
+## Downloading with IDM
+
+For better downloads with IDM, use "2" in output preference setting (4th when you start the script). 
+That will give you a HTML page with direct links to all episodes. Then you can use IDM to download all links at once. 
+See [official manual](https://www.internetdownloadmanager.com/support/right_click_IE.html) for an illustrated guide.
 
 
 ## FAQ
