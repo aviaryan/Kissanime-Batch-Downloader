@@ -78,17 +78,17 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 
 ![screen shot 2017-02-09 at 1 50 29 pm](https://cloud.githubusercontent.com/assets/4047597/22774908/4674300a-eecf-11e6-8ec7-02124461fb00.jpg)
 
-* Once the process is completed, a window will open with the list of links.
+* Once the process is completed, the file with list of links will be downloaded or opened (depends on the browser).
 
 ![screen shot 2017-02-09 at 1 51 16 pm](https://cloud.githubusercontent.com/assets/4047597/22774909/472f4034-eecf-11e6-8cbc-26e935bcca47.jpg)
 
-Once you copy these links you can use something like Internet Download Manager to queue them all up at once and start batch downloading.
-
+Now you can use any basic download tool to download all the episodes. There are some methods given below. I recommend the [DownThemAll method](#dta) (requires Firefox).
 
 
 ## Downloading links through command line
 
-Use [aria2](https://aria2.github.io). It is a cross-platform application available on Mac, Linux and Windows.
+If you entered "0" in output preference, you will get a plain list of links.
+You can use [aria2](https://aria2.github.io) to download them at once. It is a cross-platform application available on Mac, Linux and Windows.
 
 ```
 aria2c -i file_with_links.txt
