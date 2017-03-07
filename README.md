@@ -98,7 +98,7 @@ You can also use [aria2_basic_helper.sh](helpers/aria2_basic_helper.sh) for a be
 
 
 <a name="bdf"></a>
-## Better Download Filenames
+## Better download filenames (command line)
 
 Enter "1" in step 4 of script configuration to output episode links with filenames. These filenames are derived from episode names on KissXXXX website. 
 You can use `wget` or `aria2c` to download the list of episodes with proper names. 
@@ -120,7 +120,7 @@ Once solved, come back to the anime list and click on OK in the prompt to resume
 [DownThemAll](https://addons.mozilla.org/en-US/firefox/addon/downthemall/) is a Firefox extension. 
 Once you install it in Firefox, use "2" in output preference setting (4th when you start the script) to generate HTML page as output. 
 That will give you a HTML page with direct links to all episodes. Now, open that page in Firefox and right click a blank location. 
-Select "DownThemAll" from the menu to show a dialog with all urls in the page. Select all urls and **set the mask as \*text\***. 
+Select "DownThemAll" from the menu to show a dialog with all urls in the page. Select all urls and **set the mask as `*text*`**. 
 Then start the download. Now downloading will start with proper filenames.
 
 
