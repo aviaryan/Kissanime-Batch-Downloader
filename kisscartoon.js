@@ -63,7 +63,7 @@ if (videoQuality == null){
 }
 
 var opOptions = prompt(
-	"How do you want output to be?\n0 = simple list of links\n1 = List with filenames (for wget, aria2 helper scripts)",
+	"How do you want output to be?\n0 = simple list of links\n1 = List with filenames (for wget, aria2 helper scripts)\n2 = HTML page with links",
 	defaultText="0"
 );
 
@@ -128,6 +128,8 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 						name = getDownloadName(episodeNames[i], $(el).html());
 						if (opOptions == "1"){
 							linkStr += encodeURI(long_url) + " " + name + "\n";
+						} else if (opOptions == "2"){
+							linkStr += '<a href="' + long_url + '">' + name + '</a><br>';
 						} else {
 							linkStr += long_url + "\n";
 						}
@@ -156,7 +158,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 }
 
 console.log('Opening list of links')
-download("links.txt", 'text/plain', linkStr)
+download("links." + ((opOptions == '2') ? 'html' : 'txt'), (opOptions == '2') ? 'text/html' : 'text/plain', linkStr)
 
 // http://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server
 function download(filename, datatype, text) {
