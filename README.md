@@ -72,7 +72,7 @@ $.getScript("https://rawgit.com/aviaryan/Kissanime-Batch-Downloader/master/kissa
 * Enter your resolution preference. Eg > `720,480,360`
 
 <a name="opf"></a>
-* Enter the links output preference. `0` is for basic list of links (works with any basic download tool), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for [DownThemAll (Firefox)](#dta), [IDM](#idm)). 
+* Enter the links output preference. `0` is for basic list of links (works with any basic download tool), `1` is for [list of links with episode names](#bdf) (suitable for wget, aria2c users), `2` is for HTML page with download links (suitable for [DownThemAll (Firefox)](#dta)). 
 
 * Wait till all links are generated.
 
@@ -122,14 +122,6 @@ Once you install it in Firefox, use "2" in output preference setting (4th when y
 That will give you a HTML page with direct links to all episodes. Now, open that page in Firefox and right click a blank location. 
 Select "DownThemAll" from the menu to show a dialog with all urls in the page. Select all urls and **set the mask as `*text*`**. 
 Then start the download. Now downloading will start with proper filenames.
-
-
-<a name="idm"></a>
-## Downloading with IDM
-
-For better downloads with IDM, use "2" in output preference setting (4th when you start the script). 
-That will give you a HTML page with direct links to all episodes. Then you can use IDM to download all links at once. 
-See [official manual](https://www.internetdownloadmanager.com/support/right_click_IE.html) for an illustrated guide.
 
 
 ## FAQ
