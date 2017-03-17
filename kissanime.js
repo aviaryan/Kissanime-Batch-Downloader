@@ -3,7 +3,7 @@
 
 // CONFIG
 var siteName = "Kissanime"
-var rootUrl = 'http://kissanime.com'
+var rootUrl = 'http://kissanime.ru'
 var URL = window.location.origin
 // END CONFIG
 
@@ -11,6 +11,23 @@ var URL = window.location.origin
 var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('href'); });
 var episodeNames = $('table.listing a').map(function(i,el) { return $.trim( $(el).html() ); });
 
+<<<<<<< HEAD
+=======
+$.ajaxSetup({async:false});
+$.getScript(rootUrl + "/Scripts/asp.js");
+
+var jsS = [
+	"/Scripts/css.js",
+	"/Scripts/vr.js",
+	"/Scripts/shal.js",
+];
+console.log('Loading scripts ...');
+for (var i=0; i < jsS.length; i++){
+	console.log(jsS[i]);
+	$.getScript(rootUrl + jsS[i]);
+}
+
+>>>>>>> a5df757... Fix retrieving download links
 console.log('Starting ' + siteName + ' Batch Downloader script...');
 
 $.ajaxSetup({async:false});
@@ -92,6 +109,7 @@ $.getScript(rootUrl + "/Scripts/css.js", function(){
 							var links = $(ovelWrap(scriptCheck[1])).filter("a");
 						}
 
+<<<<<<< HEAD
 						var quals = videoQuality.split(',');
 						var found = false;
 						// pick download
@@ -117,6 +135,56 @@ $.getScript(rootUrl + "/Scripts/css.js", function(){
 									console.log(long_url);
 								}
 							});
+=======
+for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
+	console.log('Fetching listing ' + (episodeLinks.length - i) + ' [' + episodeNames[i] + ']');
+	jQuery.ajax({
+		url: URL + episodeLinks[i], 
+		tryCount : 0,
+		retryLimit : 3,
+		success: function(result) {
+			var $result = eval($(result));
+			
+			// console.log(result.search("Save link as"));
+			// console.log(result.search("divDownload"));
+
+			var data = $(result).find("#divDownload");
+
+			if (data == null || data == "" || data.length == 0){ // captcha maybe
+				console.log("Captcha detected at " + URL + episodeLinks[i]);
+				prompt("Captcha detected. Solve it by opening the link below in a new tab. After solving, press OK.",
+					defaultText=URL + episodeLinks[i]);
+				this.tryCount++;
+				$.ajax(this);  // retry
+				return;
+			}
+			// console.log(links);
+			
+			var scriptCheck = result.match(/id="divDownload">(?:(?:.|\n|\r)*?)document\.write\(ovelWrap\('(.*?)'\)\);/);
+						
+			if(scriptCheck)
+				var links = $(ovelWrap(scriptCheck[1])).filter("a");
+			
+			var quals = videoQuality.split(',');
+			var found = false;
+			// pick download
+			for (var j=0; j<quals.length; j++){
+				// check if the format exists or not
+				if (found)
+					return;
+
+				$.each(links, function(index, el) {
+					// console.log(el);
+					if ( $(el).html().search(quals[j]) > -1 ){
+						long_url = $(el).attr('href');
+						name = getDownloadName(episodeNames[i], $(el).html());
+						if (opOptions == "1"){
+							linkStr += encodeURI(long_url) + " " + name + "\n";
+						} else if (opOptions == "2"){
+							linkStr += '<a href="' + long_url + '" download="' + name + '">' + name + '</a><br>';
+						} else {
+							linkStr += long_url + "\n";
+>>>>>>> a5df757... Fix retrieving download links
 						}
 						// successful response processed
 					},
