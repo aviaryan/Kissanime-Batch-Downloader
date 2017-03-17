@@ -3,7 +3,7 @@
 
 // CONFIG
 var siteName = "Kissanime"
-var rootUrl = 'http://kissanime.com'
+var rootUrl = 'http://kissanime.ru'
 var URL = window.location.origin
 // END CONFIG
 
@@ -13,6 +13,17 @@ var episodeNames = $('table.listing a').map(function(i,el) { return $.trim( $(el
 
 $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
+
+var jsS = [
+	"/Scripts/css.js",
+	"/Scripts/vr.js",
+	"/Scripts/shal.js",
+];
+console.log('Loading scripts ...');
+for (var i=0; i < jsS.length; i++){
+	console.log(jsS[i]);
+	$.getScript(rootUrl + jsS[i]);
+}
 
 console.log('Starting ' + siteName + ' Batch Downloader script...');
 
@@ -83,6 +94,11 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 				return;
 			}
 			// console.log(links);
+			
+			var scriptCheck = result.match(/id="divDownload">(?:(?:.|\n|\r)*?)document\.write\(ovelWrap\('(.*?)'\)\);/);
+						
+			if(scriptCheck)
+				var links = $(ovelWrap(scriptCheck[1])).filter("a");
 			
 			var quals = videoQuality.split(',');
 			var found = false;
