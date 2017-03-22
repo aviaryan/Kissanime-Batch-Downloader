@@ -15,9 +15,10 @@ $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
 
 var jsS = [
+	"/Scripts/google.js",
 	"/Scripts/css.js",
-	"/Scripts/vr.js",
-	"/Scripts/shal.js",
+	"/Scripts/vr.js?v=1",
+	// "/Scripts/shal.js",
 ];
 console.log('Loading scripts ...');
 for (var i=0; i < jsS.length; i++){
@@ -96,8 +97,8 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			// console.log(links);
 			
 			var scriptCheck = result.match(/id="divDownload">(?:(?:.|\n|\r)*?)document\.write\(ovelWrap\('(.*?)'\)\);/);
-						
-			if(scriptCheck)
+		
+			if (scriptCheck)
 				var links = $(ovelWrap(scriptCheck[1])).filter("a");
 			
 			var quals = videoQuality.split(',');
@@ -139,7 +140,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			}
 			return;
 		},
-		async:   false, 
+		async:   false,
 		script:  true
 	});
 }
